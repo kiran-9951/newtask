@@ -1,0 +1,302 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f2f2; /* Updated background color */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #57aee0; /* Navbar background color */
+    color: #0c0202; /* Navbar text color */
+    padding: 2em;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #0a0a0a; /* Link color */
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #dcecde; /* Link hover color */
+}
+
+/* Main Content Styles */
+#content {
+    padding: 6em 2em 2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Form Styles */
+form {
+    background: #ffffffd0; /* Form background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button {
+    background-color: #57aee0; /* Button background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    grid-column: span 2;
+}
+
+form button:hover {
+    background-color: #3399cc; /* Button hover color */
+}
+
+/* Task Detail View */
+.task-detail-view {
+    border: 1px solid #dcdcdc;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(65, 105, 225, 0.2);
+    background-color: #ffffff;
+    max-width: 700px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    text-align: left; /* Ensure left alignment of text */
+}
+
+.task-detail-view h2 {
+    font-size: 1.75em;
+    color: #3b8dbd;
+    margin-bottom: 20px;
+    text-align: center; /* Center-align the main heading */
+}
+
+.task-detail-view h3 {
+    font-size: 1.5em; /* Increase the font size of the task title */
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.task-detail-view p {
+    font-size: 1.1em;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.task-detail-view .priority {
+    font-weight: bold; /* Make priority stand out */
+}
+
+.task-detail-view .button-group {
+    text-align: center; /* Center-align the button group */
+    margin-top: 20px; /* Add space above the button group */
+}
+
+.task-detail-view button {
+    background-color: #4da6ff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 10px 5px; /* Adjusted margins for better spacing */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.task-detail-view button:hover {
+    background-color: #3385ff;
+}
+
+
+
+/* Task List Styles */
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    height: 15rem;
+    background: #fff;
+    border-left: 5px solid #de8a1d; /* Border color */
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.task-item:hover {
+    background-color: #fafafa; 
+    transform: scale(1.02);
+}
+
+.task-item strong {
+    font-size: 1.1em;
+}
+
+.task-item button {
+    background-color: #45dff1; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.task-item button:hover {
+    background-color: #30cbe8;
+}
+
+.task-item button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Search and Filter Styles */
+#search,
+#filter-priority {
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 1em;
+}
+
+#search {
+    width: 250px;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#filter-priority {
+    width: 250px;
+}
+
+#search:focus,
+#filter-priority:focus {
+    outline: none;
+    border-color: #3fd7e2;
+}
+
+button {
+    background-color: rgb(67, 218, 238); /* Default button background color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #5d2299; /* Button hover color */
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        text-align: left;
+        padding: 1em;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    #content {
+        padding: 7em 1em 2em;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    #search,
+    #filter-priority {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 468px) {
+    #content {
+        padding: 8em 1em 8em;
+    }
+
+    .task-item {
+        box-sizing: border-box;
+        margin: 0.5em 0;
+        padding: 1em;
+        font-size: 0.9em;
+    }
+
+    .task-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 1em;
+    }
+
+    .task-actions button {
+        width: auto;
+        text-align: center;
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+    }
+}
