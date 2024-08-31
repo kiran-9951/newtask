@@ -271,6 +271,46 @@ function scheduleReminder(reminderTime, taskTitle) {
     }, delay);
   }
 }
+// Drag-and-drop functionality
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.closest("li").dataset.id);
+}
+
+function drop(event) {
+  event.preventDefault();
+  const draggedTaskId = event.dataTransfer.getData("text");
+  const targetTaskId = event.target.closest("li").dataset.id;
+
+  if (!draggedTaskId || !targetTaskId || draggedTaskId === targetTaskId) return;
+  const tasks = api.getTasks();
+  const draggedTaskIndex = tasks.findIndex((task) => task.id === draggedTaskId);
+  const targetTaskIndex = tasks.findIndex((task) => task.id === targetTaskId);
+
+  // Reorder tasks
+  const [draggedTask] = tasks.splice(draggedTaskIndex, 1);
+  tasks.splice(targetTaskIndex, 0, draggedTask);
+
+  api.saveTasks(tasks);
+  displayTasks(tasks);
+}
+
+// Attach event listeners for drag and drop
+function setupDragAndDrop() {
+  const taskList = document.getElementById("task-list");
+
+  taskList.addEventListener("dragover", allowDrop);
+  taskList.addEventListener("drop", drop);
+
+  const taskItems = taskList.querySelectorAll(".task-item");
+  taskItems.forEach((item) => {
+    item.addEventListener("dragstart", drag);
+  });
+}
+
 
 // Request notification permission on load
 document.addEventListener("DOMContentLoaded", () => {
